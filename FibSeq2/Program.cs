@@ -10,6 +10,10 @@ namespace FibSeq2
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Enter in the desired integer:");
+            string insertNumber = Console.ReadLine();
+            int DInterger = Convert.ToInt16(insertNumber);
+        
         }
     }
 }
