@@ -23,7 +23,7 @@ namespace FibSeq2
 
             //Creating a list to store the number sequence
             List<int> fibList = new List<int>();
-            fibList[seqNumber] = tmp2;
+            fibList.Insert(seqNumber, tmp);
             seqNumber++;
             int startNumber2 = tmp + 1;
 
@@ -34,10 +34,14 @@ namespace FibSeq2
                 int insert = startNumber + startNumber2;
                 if (insert <= DInterger)
                 {
-                    fibList[seqNumber] = insert;
+                    fibList.Insert(seqNumber, insert);
                     seqNumber++;
                     startNumber = startNumber2;
                     startNumber2 = insert;
+                    if (insert == DInterger)
+                    {
+                        x = insert;
+                    }
                 }
                 else
                 {
@@ -52,9 +56,9 @@ namespace FibSeq2
             foreach (int num in fibList)
             {
                 string tmpNum = Convert.ToString(num);
-                Console.Write("{0}", tmpNum);
+                Console.Write("{0} ", tmpNum);
             }
-        
+            Console.ReadLine();       
         }
     }
 }
