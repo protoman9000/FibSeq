@@ -12,7 +12,7 @@ namespace FibSeq2
         {
             //Constructor
             int tmp = 0;
-            int tmp2 = 0;
+            int tmp2 = 1;
             int seqNumber = 0;
             int startNumber = 0;
 
@@ -25,7 +25,9 @@ namespace FibSeq2
             List<int> fibList = new List<int>();
             fibList.Insert(seqNumber, tmp);
             seqNumber++;
-            int startNumber2 = tmp + 1;
+            int startNumber2 = tmp2;
+            fibList.Insert(seqNumber, tmp2);
+            seqNumber++;
 
             //The this is set up is by making startNumber as one, if it pass
             //the disired interger, we increase the startNumber. 
@@ -45,9 +47,20 @@ namespace FibSeq2
                 }
                 else
                 {
-                    tmp++;
-                    x = 0;
-                    seqNumber = 1;
+                    //If the sequence fail, we try again by clearing out the list and increase startnumber2
+                    //and restart the program. 
+                    fibList.Clear();
+                    seqNumber = 0;
+                    fibList.Insert(seqNumber, tmp);
+                    seqNumber++;
+                    tmp2++;                                   
+                    fibList.Insert(seqNumber, tmp2);
+                    seqNumber++;
+
+                    //the new numbers for the equation.
+                    startNumber = tmp;
+                    startNumber2 = tmp2;                   
+                    x = 0;     
                 }
             }
 
