@@ -36,6 +36,8 @@ namespace FibSeq2
                 {
                     fibList[seqNumber] = insert;
                     seqNumber++;
+                    startNumber = startNumber2;
+                    startNumber2 = insert;
                 }
                 else
                 {
@@ -46,10 +48,11 @@ namespace FibSeq2
             }
 
             //printing out the list.
+            Console.WriteLine("Output:");
             foreach (int num in fibList)
             {
                 string tmpNum = Convert.ToString(num);
-
+                Console.Write("{0}", tmpNum);
             }
         
         }
