@@ -10,7 +10,7 @@ namespace FibSeq2
     {
         static void Main(string[] args)
         {
-            //Constructor
+            //Variables
             int tmp = 0;
             int tmp2 = 1;
             int seqNumber = 0;
